@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register Form</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Hello World!</h1>
+        <p>Your Login page <br>or <br> Sign In!</p>
+
+        <!-- Login Form -->
+        <form id="login-form">
+            <div class="input-container">
+                <input type="text" id="login-username" placeholder="Enter username" required>
+                <small class="error-message"></small>
+            </div>
+            <div class="input-container">
+                <input type="password" id="login-password" placeholder="Enter password" required>
+                <small class="error-message"></small>
+            </div>
+            <p class="recover">
+                <a href="#">Recover password</a>
+            </p>
+            <button type="button" onclick="validateLogin()">Sign in</button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="register-form" style="display:none;">
+            <div class="input-container">
+                <input type="text" id="register-firstname" placeholder="First Name" required>
+                <small class="error-message"></small>
+            </div>
+            <div class="input-container">
+                <input type="text" id="register-lastname" placeholder="Last Name" required>
+                <small class="error-message"></small>
+            </div>
+            <div class="input-container">
+                <input type="email" id="register-email" placeholder="Email" required>
+                <small class="error-message"></small>
+            </div>
+            <div class="input-container">
+                <!-- Phone Number Input with Country Code Dropdown -->
+                <input type="tel" id="register-phone" placeholder="Phone Number" required>
+                <small class="error-message"></small>
+            </div>
+            <div class="input-container gender-container">
+                <label class="gender-label">
+                    <input type="radio" name="gender" value="male" required> Male
+                </label>
+                <label class="gender-label">
+                    <input type="radio" name="gender" value="female"> Female
+                </label>
+            </div>
+            <small class="error-message" id="gender-error"></small>
+            <button type="button" onclick="validateRegister()">Register</button>
+        </form>
+
+        <p class="or">----- or continue with -----</p>
+        <div class="icons">
+            <i class="fab fa-google"></i>
+            <i class="fab fa-github"></i>
+            <i class="fab fa-facebook"></i>
+        </div>
+        <div class="not-member">
+            Not a Member? <a href="#" id="toggle-form">Register now</a>
+        </div>
+    </div>
+
+    <!-- External JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
